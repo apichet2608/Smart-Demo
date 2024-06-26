@@ -14,7 +14,9 @@ function Tab_1() {
 
   const GETAPI = async () => {
     let params = {};
-    let url = "http://10.17.66.242:3000/smart_format_page/dashboard/getdata";
+    let url = `${
+      import.meta.env.VITE_IP_API
+    }/smart_format_page/dashboard/getdata`;
     let response = await GetAPI(params, url);
 
     console.log(response);
@@ -35,7 +37,9 @@ function Tab_1() {
       name: name,
       email: email,
     };
-    let url = "http://10.17.66.242:3000/smart_format_page/dashboard/create";
+    let url = `${
+      import.meta.env.VITE_IP_API
+    }/smart_format_page/dashboard/create`;
     let response = await PostAPI(body, url);
     if (response.status === "OK") {
       console.log("OK");
@@ -49,7 +53,9 @@ function Tab_1() {
 
   const PUTAPI = async (value) => {
     let id = value;
-    let url = `http://10.17.66.242:3000/smart_format_page/dashboard/editdata/${id}`;
+    let url = `${
+      import.meta.env.VITE_IP_API
+    }/smart_format_page/dashboard/editdata/${id}`;
     let body = {
       name: name,
       email: email,
@@ -68,7 +74,9 @@ function Tab_1() {
 
   const DELETEAPI = async (value) => {
     let id = value;
-    let url = `http://10.17.66.242:3000/smart_format_page/dashboard/delete/${id}`;
+    let url = `${
+      import.meta.env.VITE_IP_API
+    }/smart_format_page/dashboard/delete/${id}`;
 
     let body = {
       name: name,
